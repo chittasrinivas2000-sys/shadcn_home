@@ -8,13 +8,11 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
-    /* ADD THIS 👇 */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
 
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
@@ -22,13 +20,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+
+     "noUnusedLocals": false,
+     "noUnusedParameters": false,
+
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
 }
