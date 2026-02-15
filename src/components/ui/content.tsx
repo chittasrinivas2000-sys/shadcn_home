@@ -15,8 +15,8 @@ import Third from "./Third"
 import Fourth from "./Fourth"
 const Content =()=>{
     return(
-        <section >
-            <div className="flex justify-between">
+        <section className="max-w-9xl mx-auto px-6 py-8">
+            <div className="flex justify-between hidden lg:flex">
             <div className="flex ml-8" >
                 <h1 className="mr-4 text-slate 700 font-semibold">Examples</h1>
                 <h1 className="mr-4 text-slate-500 font-semibold">DashBoard</h1>
@@ -50,8 +50,8 @@ const Content =()=>{
                 </Button>
             </div>
             </div>
-                <div className="flex m-8" >
-                    <Payment/>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 p-8" >
+                    <Payment />
                     <Second/>
                     <Third/>
                     <Fourth/>

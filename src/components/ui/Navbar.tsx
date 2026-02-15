@@ -18,19 +18,39 @@ export function Navbar() {
         {/* LEFT SIDE */}
         <div className="flex items-center gap-6">
 
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent side="left" className="w-64 sm:w-80 p-6">
+                <div className="flex flex-col gap-4 mt-6">
+                  <Button variant="ghost" className="justify-start">Docs</Button>
+                  <Button variant="ghost" className="justify-start">Components</Button>
+                  <Button variant="ghost" className="justify-start">Blocks</Button>
+                  <Button variant="ghost" className="justify-start">Charts</Button>
+                  <Button variant="ghost" className="justify-start">Directory</Button>
+                  <Button variant="ghost" className="justify-start">Create</Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="gap-2">
+              <NavigationMenuList className="gap-4">
 
-                {/* Logo */}
                 <NavigationMenuItem>
                   <NavigationMenuLink>
                     <LogoBadge />
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                {/* Menu Items */}
                 <NavigationMenuItem>
                   <NavigationMenuLink className="font-semibold">
                     Docs
@@ -71,34 +91,12 @@ export function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-
-              <SheetContent side="right">
-                <div className="flex flex-col gap-4 mt-6">
-                  <Button variant="ghost">Docs</Button>
-                  <Button variant="ghost">Components</Button>
-                  <Button variant="ghost">Blocks</Button>
-                  <Button variant="ghost">Charts</Button>
-                  <Button variant="ghost">Directory</Button>
-                  <Button variant="ghost">Create</Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
 
-          {/* Search (Hidden on small screens) */}
+          {/* Search */}
           <div className="relative w-64 hidden lg:block">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -108,7 +106,7 @@ export function Navbar() {
             />
           </div>
 
-          {/* GitHub Badge */}
+          {/* GitHub */}
           <Button
             variant="secondary"
             className="flex items-center gap-2 bg-black text-white hover:bg-black/80"
@@ -117,7 +115,7 @@ export function Navbar() {
             <span className="font-semibold">107k</span>
           </Button>
 
-          {/* Action Button */}
+          {/* New Project */}
           <Button>+ New Project</Button>
 
         </div>
