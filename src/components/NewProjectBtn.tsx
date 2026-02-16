@@ -91,7 +91,7 @@ export default function NewProjectBtn() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div>
                     <Label>Name</Label>
-                    <Input placeholder="Enter your name" size="sm" />
+                    <Input placeholder="Enter your name" />
                   </div>
                   <div>
                     <Label>Role</Label>
