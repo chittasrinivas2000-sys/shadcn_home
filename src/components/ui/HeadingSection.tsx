@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button"
-const HeadingSection = () => {
+
+interface HeadingSectionProps {
+  onGetStarted: () => void,
+  onViewComponents:()=>void
+}
+const HeadingSection = ({ onGetStarted,onViewComponents }: HeadingSectionProps) => {
   return (
    <section className="w-full overflow-x-hidden py-8 md:py-16 text-center">
   
@@ -25,11 +30,11 @@ const HeadingSection = () => {
 
   {/* Buttons */}
   <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mt-8 px-4">
-    <Button className="bg-black text-white rounded w-full sm:w-auto px-6 py-2">
+    <Button className="bg-black text-white rounded w-full sm:w-auto px-6 py-2" onClick={onGetStarted}>
       Get Started
     </Button>
 
-    <Button className="bg-gray-50 text-black rounded w-full sm:w-auto px-6 py-2">
+    <Button className="bg-gray-50 text-black rounded w-full sm:w-auto px-6 py-2"  onClick={onViewComponents}>
       View Components
     </Button>
   </div>

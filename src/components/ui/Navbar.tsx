@@ -9,8 +9,12 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Menu, Search, Github } from "lucide-react"
 import LogoBadge from "@/components/logo-badge"
+type NavbarProps = {
+  onNewProject: () => void,
+   onLogoClick: () => void
+}
 
-export function Navbar() {
+export function Navbar({ onNewProject, onLogoClick }: NavbarProps) {
   return (
     <nav className="w-full border-b bg-background px-6 py-4">
       <div className="flex items-center justify-between">
@@ -46,7 +50,7 @@ export function Navbar() {
               <NavigationMenuList className="gap-4">
 
                 <NavigationMenuItem>
-                  <NavigationMenuLink>
+                  <NavigationMenuLink onClick={onLogoClick}>
                     <LogoBadge />
                   </NavigationMenuLink>
                 </NavigationMenuItem>
@@ -116,7 +120,7 @@ export function Navbar() {
           </Button>
 
           {/* New Project */}
-          <Button>+ New Project</Button>
+          <Button onClick={onNewProject}>+ New Project</Button>
 
         </div>
 
